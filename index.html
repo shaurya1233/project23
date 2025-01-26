@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Romantic Website for Saanvi</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+      background: #000; /* Black background initially */
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    }
+
+    .input-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .input-box {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: 10px;
+      border: 2px solid #fff;
+      width: 80%;
+      max-width: 400px;
+    }
+
+    .warning-message, .special-message, .music-controls {
+      display: none;
+      text-align: center;
+      color: #ff69b4;
+      font-size: 1.2rem;
+      margin-top: 20px;
+    }
+
+    .button-container {
+      margin-top: 20px;
+    }
+
+    .yes-button, .no-button {
+      padding: 15px;
+      font-size: 1.2rem;
+      border: none;
+      cursor: pointer;
+      border-radius: 8px;
+      margin: 0 10px;
+      transition: background-color 0.3s;
+    }
+
+    .yes-button {
+      background-color: #ff69b4;
+    }
+
+    .no-button {
+      background-color: #333;
+      color: #fff;
+    }
+
+    .yes-button:hover {
+      background-color: #ff1493;
+    }
+
+    .no-button:hover {
+      background-color: #555;
+    }
+
+    /* Animations for background and text */
+    @keyframes moveBackground {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* Transition to pink with roses when magic text is typed */
+    .pink-background {
+      background: url('https://source.unsplash.com/1600x900/?pink-roses,cats') no-repeat center center fixed;
+      background-size: cover;
+      animation: moveBackground 10s infinite alternate;
+    }
+
+    /* Fullscreen message */
+    .full-message {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #ff69b4;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+      display: none;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>SHAURYA ??</h1>
+
+  <div class="input-container">
+    <input type="text" class="input-box" placeholder="Type here..." oninput="handleInput(event)">
+    <div class="warning-message" id="warning-message">?? Your device is being tracked! ??</div>
+    <div class="special-message" id="special-message">Welcome Saanvi Madam ?? You are the prettiest girl in the world! ??</div>
+  </div>
+
+  <div class="full-message" id="full-message">I LOVE YOU SAANVI ??</div>
+
+  <div class="music-controls">
+    <audio id="music-player" autoplay>
+      <source id="audio-source" src="" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <div class="button-container" id="button-container">
+    <button class="yes-button" id="yes-button" onclick="handleYes()">Yes</button>
+    <button class="no-button" id="no-button" onclick="handleNo()">No</button>
+  </div>
+
+  <script>
+    function handleInput(event) {
+      const input = event.target.value;
+      const warningMessage = document.getElementById("warning-message");
+      const specialMessage = document.getElementById("special-message");
+      const fullMessage = document.getElementById("full-message");
+      const musicPlayer = document.getElementById("music-player");
+
+      if (input === "szszzzssz") {
+        document.body.classList.add("pink-background");
+        specialMessage.style.display = "block";
+        fullMessage.style.display = "block";
+        musicPlayer.src = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"; // Happy music example
+      } else if (input.length > 0) {
+        warningMessage.style.display = "block";
+      } else {
+        warningMessage.style.display = "none";
+        specialMessage.style.display = "none";
+        fullMessage.style.display = "none";
+      }
+    }
+
+    function handleYes() {
+      document.body.style.backgroundColor = "#ff1493";
+      document.getElementById("button-container").style.display = "none";
+      alert("Thank you, Saanvi, for coming into my life!");
+    }
+
+    function handleNo() {
+      document.body.style.backgroundColor = "#000";
+      document.getElementById("button-container").style.display = "none";
+      alert("I am heartbroken. ??");
+      document.getElementById("music-player").src = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"; // Sad music example
+    }
+  </script>
+</body>
+</html>
